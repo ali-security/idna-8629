@@ -9,6 +9,8 @@ python:
   - "pypy"
   - "pypy3"
 install:
+  - if [[ $TRAVIS_PYTHON_VERSION == '3.8' ]]; then pip install setuptools==68.0.0; fi
+  - if [[ $TRAVIS_PYTHON_VERSION == '3.8' ]]; then pip install wheel==0.42.0; fi
   - pip install .
 script:
   - python -m unittest discover
